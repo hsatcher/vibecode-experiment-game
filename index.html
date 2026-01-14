@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Vibe Experiments</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=DM+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="hero">
+        <p class="eyebrow">Codex Vibe Experiments</p>
+        <h1>Two Buttons, Two Outcomes</h1>
+        <p class="subhead">Left increments. Right rolls a random 0-100.</p>
+      </header>
+
+      <section class="panel">
+        <div class="card">
+          <p class="label">Left Counter</p>
+          <div class="readout" id="leftValue">0</div>
+          <button class="action" id="leftButton" type="button">
+            Increment
+          </button>
+        </div>
+
+        <div class="divider" aria-hidden="true"></div>
+
+        <div class="card">
+          <p class="label">Right Random</p>
+          <div class="readout" id="rightValue">--</div>
+          <button class="action" id="rightButton" type="button">
+            Roll 0-100
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
