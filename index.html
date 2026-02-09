@@ -16,29 +16,13 @@
     <main class="page">
       <header class="hero">
         <p class="eyebrow">Codex Vibe Experiments</p>
-        <h1>Two Buttons, Two Outcomes</h1>
-        <p class="subhead">Left increments. Right rolls a random 0-100.</p>
+        <h1>Four Player Deal</h1>
+        <p class="subhead">
+          Testing setup: 4 players, 3 coins each, 7 blank cards face-up.
+        </p>
       </header>
 
-      <section class="panel">
-        <div class="card">
-          <p class="label">Left Counter</p>
-          <div class="readout" id="leftValue">0</div>
-          <button class="action" id="leftButton" type="button">
-            Increment
-          </button>
-        </div>
-
-        <div class="divider" aria-hidden="true"></div>
-
-        <div class="card">
-          <p class="label">Right Random</p>
-          <div class="readout" id="rightValue">--</div>
-          <button class="action" id="rightButton" type="button">
-            Roll 0-100
-          </button>
-        </div>
-      </section>
+      <section class="table" id="players"></section>
     </main>
 
     <script src="script.js"></script>

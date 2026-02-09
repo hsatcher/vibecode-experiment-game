@@ -1,16 +1,44 @@
-const leftValue = document.querySelector("#leftValue");
-const rightValue = document.querySelector("#rightValue");
-const leftButton = document.querySelector("#leftButton");
-const rightButton = document.querySelector("#rightButton");
+const playersRoot = document.querySelector("#players");
 
-let count = 0;
+const players = Array.from({ length: 4 }, (_, index) => ({
+  id: index + 1,
+  coins: 3,
+  cards: Array.from({ length: 7 }, () => ({})),
+}));
 
-leftButton.addEventListener("click", () => {
-  count += 1;
-  leftValue.textContent = String(count);
-});
+const renderPlayers = () => {
+  playersRoot.innerHTML = "";
 
-rightButton.addEventListener("click", () => {
-  const roll = Math.floor(Math.random() * 101);
-  rightValue.textContent = String(roll);
-});
+  players.forEach((player) => {
+    const playerCard = document.createElement("article");
+    playerCard.className = "player";
+
+    const header = document.createElement("div");
+    header.className = "player-header";
+
+    const name = document.createElement("p");
+    name.className = "player-name";
+    name.textContent = `Player ${player.id}`;
+
+    const coins = document.createElement("div");
+    coins.className = "coins";
+    coins.textContent = `${player.coins} coins`;
+
+    header.append(name, coins);
+
+    const cards = document.createElement("div");
+    cards.className = "cards";
+
+    player.cards.forEach((_, cardIndex) => {
+      const card = document.createElement("div");
+      card.className = "card";
+      card.textContent = `Card ${cardIndex + 1}`;
+      cards.appendChild(card);
+    });
+
+    playerCard.append(header, cards);
+    playersRoot.appendChild(playerCard);
+  });
+};
+
+renderPlayers();
